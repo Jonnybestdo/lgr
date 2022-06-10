@@ -1,0 +1,20 @@
+[package]
+name = "concpets"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "event"
+path = "src/events.rs"
+
+[[bin]]
+name = "fib"
+path = "src/fib.rs"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[workspace]
+
+members = []
+
+[dependencies]
+

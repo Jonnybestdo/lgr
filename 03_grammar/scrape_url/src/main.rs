@@ -1,8 +1,19 @@
 use std::fs;
 
 fn main() {
-    let url = "https://www.rust-lang.org/";
-    let output = "rust.md";
+    let mut url = "https://www.rust-lang.org/";
+    let mut output = "rust.md";
+
+    let args: Vec<String> = std::env::args().collect::<Vec<String>>();
+    let args: Vec<&str> = args.iter().map(|s| s.as_str()).collect();
+    match args.len() {
+        2 => url = args[1],
+        3 => {
+            url = args[1];
+            output = args[2];
+        },
+        _ => (),
+    }
 
     println!("Fetching url: {}", url);
     let body = reqwest::blocking::get(url).unwrap().text().unwrap();

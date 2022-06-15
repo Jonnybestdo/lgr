@@ -4,6 +4,7 @@ members = [
     "02_concepts",
     "03_grammar/scrape_url",
     "03_grammar/scrape_url_args",
+    "04_httpie"
 ]
 
 # exclude = [
